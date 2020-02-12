@@ -12,9 +12,13 @@ namespace R5T.Stavanger.NetStandard
         /// <summary>
         /// Adds the <see cref="ShortcutOperator"/> implementation of <see cref="IShortcutOperator"/> as a <see cref="ServiceLifetime.Singleton"/>.
         /// </summary>
-        public static IServiceCollection AddNetStandardShortcutOperator(this IServiceCollection services)
+        public static IServiceCollection AddNetStandardShortcutOperator(this IServiceCollection services,
+            ServiceAction<IShortcutPathConventions> addShortcutPathConventions)
         {
-            services.AddSingleton<IShortcutOperator, ShortcutOperator>();
+            services
+                .AddSingleton<IShortcutOperator, ShortcutOperator>()
+                .RunServiceAction(addShortcutPathConventions)
+                ;
 
             return services;
         }
@@ -22,9 +26,10 @@ namespace R5T.Stavanger.NetStandard
         /// <summary>
         /// Adds the <see cref="ShortcutOperator"/> implementation of <see cref="IShortcutOperator"/> as a <see cref="ServiceLifetime.Singleton"/>.
         /// </summary>
-        public static ServiceAction<IShortcutOperator> AddNetStandardShortcutOperatorAction(this IServiceCollection services)
+        public static ServiceAction<IShortcutOperator> AddNetStandardShortcutOperatorAction(this IServiceCollection services,
+            ServiceAction<IShortcutPathConventions> addShortcutPathConventions)
         {
-            var serviceAction = new ServiceAction<IShortcutOperator>(() => services.AddNetStandardShortcutOperator());
+            var serviceAction = new ServiceAction<IShortcutOperator>(() => services.AddNetStandardShortcutOperator(addShortcutPathConventions));
             return serviceAction;
         }
     }
