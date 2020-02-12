@@ -2,3 +2,11 @@ R5T.Stavanger.NetStandard - A NetStandard-based IShortcutOperator service implem
 
 Goals
 
+Create an IShortcutOperator implementation that does NOT take a COM reference, and so can thus be a .NET Standard library.
+
+The actual functionality is done via platform-invoke (or its COM equivalent).
+
+
+References
+
+See: https://stackoverflow.com/questions/4897655/create-a-shortcut-on-desktop
