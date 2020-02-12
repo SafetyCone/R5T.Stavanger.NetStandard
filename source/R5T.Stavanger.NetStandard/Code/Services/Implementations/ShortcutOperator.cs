@@ -6,18 +6,25 @@ namespace R5T.Stavanger.NetStandard
 {
     public class ShortcutOperator : IShortcutOperator
     {
+        private IShortcutPathConventions ShortcutPathConventions { get; }
+
+
+        public ShortcutOperator(IShortcutPathConventions shortcutPathConventions)
+        {
+            this.ShortcutPathConventions = shortcutPathConventions;
+        }
+
         public string CreateShortcut(string shortcutFilePath, string shortcutTargetPath, string description)
         {
-            IShellLink link = (IShellLink)new ShellLink();
+            var link = new ShellLink() as IShellLink;
 
-            // setup shortcut information
-            //link.SetDescription();
+            link.SetDescription(description);
             link.SetPath(shortcutTargetPath);
 
-            // save it
-            IPersistFile file = (IPersistFile)link;
-            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
-            file.Save(shortcutFilePath, false);
+            var file = link as IPersistFile;
+
+            var shortcutLinkFilePath = this.ShortcutPathConventions.MakeFilePathIntoLinkFilePath(shortcutFilePath);
+            file.Save(shortcutLinkFilePath, false);
 
             return shortcutFilePath;
         }
