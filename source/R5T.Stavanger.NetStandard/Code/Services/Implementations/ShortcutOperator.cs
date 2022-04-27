@@ -1,10 +1,10 @@
-﻿using System;
-using System.Runtime.InteropServices.ComTypes;
+using System;
+using System.Runtime.InteropServices.ComTypes;using R5T.T0064;
 
 
 namespace R5T.Stavanger.NetStandard
-{
-    public class ShortcutOperator : IShortcutOperator
+{[ServiceImplementationMarker]
+    public class ShortcutOperator : IShortcutOperator,IServiceImplementation
     {
         private IShortcutPathConventions ShortcutPathConventions { get; }
 

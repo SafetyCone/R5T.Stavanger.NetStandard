@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R5T.Stavanger.NetStandard.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R5T.Stavanger.NetStandard.Testing", "R5T.Stavanger.NetStandard.Testing\R5T.Stavanger.NetStandard.Testing.csproj", "{C7B1B542-72DF-4BC7-BACB-ABC041A12D1C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Dependencies", "_Dependencies", "{9994A09C-19E8-4914-9148-C6E8A955EE0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R5T.T0064", "..\..\R5T.T0064\source\R5T.T0064\R5T.T0064.csproj", "{00D90408-0CFE-4E63-829B-18A460F6E645}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,5 +62,20 @@ Global
 		{C7B1B542-72DF-4BC7-BACB-ABC041A12D1C}.Release|x64.Build.0 = Release|Any CPU
 		{C7B1B542-72DF-4BC7-BACB-ABC041A12D1C}.Release|x86.ActiveCfg = Release|Any CPU
 		{C7B1B542-72DF-4BC7-BACB-ABC041A12D1C}.Release|x86.Build.0 = Release|Any CPU
+		{00D90408-0CFE-4E63-829B-18A460F6E645}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00D90408-0CFE-4E63-829B-18A460F6E645}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00D90408-0CFE-4E63-829B-18A460F6E645}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{00D90408-0CFE-4E63-829B-18A460F6E645}.Debug|x64.Build.0 = Debug|Any CPU
+		{00D90408-0CFE-4E63-829B-18A460F6E645}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{00D90408-0CFE-4E63-829B-18A460F6E645}.Debug|x86.Build.0 = Debug|Any CPU
+		{00D90408-0CFE-4E63-829B-18A460F6E645}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00D90408-0CFE-4E63-829B-18A460F6E645}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00D90408-0CFE-4E63-829B-18A460F6E645}.Release|x64.ActiveCfg = Release|Any CPU
+		{00D90408-0CFE-4E63-829B-18A460F6E645}.Release|x64.Build.0 = Release|Any CPU
+		{00D90408-0CFE-4E63-829B-18A460F6E645}.Release|x86.ActiveCfg = Release|Any CPU
+		{00D90408-0CFE-4E63-829B-18A460F6E645}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{00D90408-0CFE-4E63-829B-18A460F6E645} = {9994A09C-19E8-4914-9148-C6E8A955EE0E}
 	EndGlobalSection
 EndGlobal
